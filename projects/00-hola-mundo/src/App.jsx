@@ -7,6 +7,7 @@ export function App(){
             <TwitterFollowCard
                 userName="esthermn04"
                 name="esthermarquez_"
+                initialIsFollowing={true}
             />
 
             <TwitterFollowCard

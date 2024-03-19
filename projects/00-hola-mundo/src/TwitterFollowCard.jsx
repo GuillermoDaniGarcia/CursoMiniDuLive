@@ -2,8 +2,8 @@ import {useState} from 'react'
 /* eslint-disable no-unused-vars */
 import './App.css'
 // eslint-disable-next-line react/prop-types, no-unused-vars
-export function TwitterFollowCard ({userName, name}){
-    const [isFollowing, setIsFollowing]= useState(false)
+export function TwitterFollowCard ({userName, name, initialIsFollowing}){
+    const [isFollowing, setIsFollowing]= useState(initialIsFollowing)
 
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClassName = isFollowing ? 'tw-followCard-button is-following' : 'tw-followCard-button'
