@@ -1,6 +1,16 @@
+import {useState} from 'react'
+/* eslint-disable no-unused-vars */
 import './App.css'
 // eslint-disable-next-line react/prop-types, no-unused-vars
-export function TwitterFollowCard ({userName, name, isFollowing}){
+export function TwitterFollowCard ({userName, name}){
+    const [isFollowing, setIsFollowing]= useState(false)
+
+    const text = isFollowing ? 'Siguiendo' : 'Seguir'
+    const buttonClassName = isFollowing ? 'tw-followCard-button is-following' : 'tw-followCard-button'
+
+    const handleClick = () =>{
+        setIsFollowing(!isFollowing)
+    }
     console.log(isFollowing)
     const imageSrc = `https://unavatar.io/${userName}`
     return(
@@ -14,8 +24,8 @@ export function TwitterFollowCard ({userName, name, isFollowing}){
             </header>
 
             <aside>
-                <button className='tw-followCard-button'>
-                    Seguir
+                <button className={buttonClassName} onClick={handleClick}>
+                    {text}
                 </button>
             </aside>
         </article>
